@@ -1,0 +1,115 @@
+* {
+    margin: 0; /* Внешний отступ моего календаря */
+    padding: 0; /* Внутренний отступы поля со всех сторон элемента */
+    box-sizing: border-box; /* Определяю как вычисляется общая ширина и высота. Учитываю любые границы и внутренние отступы в значениях, которые вы указываете в ширине и высоте элемента */
+    font-family: 'Road Rage', sans-serif; /* Шрифт всего моего календаря */
+  }
+  
+  html {
+    font-size: 80%; /* Определяю размер шрифта своей web-страницы */
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-color:whitesmoke;
+    color:aliceblue;
+  display: flex; /* Размещение объектов равномерно, относительно оси координат, чтоб не болтались хуй знает где */
+  justify-content:center; /* Выравнивание элементов окна браузера по центру, равномерно */
+  align-items: center; /* Вырвнивает элементы в контейнере вроде как по середине */
+  }
+
+  .calendar{
+    width: 45rem;
+    height: 52rem;
+    background-color: black;
+    box-shadow: 0.5rem, 3rem, rgba(0,0,0,4);
+  }
+
+  .month {
+    width: 100%;
+    height: 12rem;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between; /* Чтоб элементы равномерно распологались вдоль главной оси контейнера */
+    align-items: center; /* Вырвнивает элементы в контейнере вроде как по середине */
+    padding: 1rem; /* Внутренние отступы слева и справо распределены равномерно */
+    text-align: center; /* Текст по середине */
+    text-shadow: 0px 0px 2px green /* Тень заголовка календаря, сделал для эстетики, вроде нормчик */
+  }
+
+.month i {
+  font-size: 1rem;
+  cursor: pointer; /* Курсор (рука-указатель) на графе месяца и даты */
+}
+
+.month h1 {
+  text-transform: uppercase; /* Преобразую текст в курсив */
+}
+
+  h1 {
+    margin-top: 90px;
+    color: #1a9900;
+  }
+h3 {
+  font-size: 19px;
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 100px;
+  height: 12rem;
+  color: blue;
+}
+
+.weekdays {
+  width: 100%; /* Ширина текста */
+  height: 5rem; /* Высота текста */
+  padding: 0.0.4rem; /* Внутренний отступы поля со всех сторон элемента */
+  display: flex; /* Размещение объектов равномерно, относительно оси координат, чтоб не болтались хуй знает где */
+  align-items:center; /* Вырвнивает элементы в контейнере вроде как по середине */
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 500; /* Устанавливает насыщенность шрифта, хотя разницы я не заметил :( */
+  letter-spacing: 0.3rem; /* Разряженность шрифта */
+  width: calc(43rem/7); /* Расчет значения свойств ширины класса дней недели */
+  align-items: center; /* Вырвнивает элементы в контейнере вроде как по середине */
+  justify-content: center; /* Выравнивание элементов окна браузера по центру, равномерно */
+  display: flex; /* Размещение объектов равномерно, относительно оси координат, чтоб не болтались хуй знает где */
+  text-shadow: 0.1rem 0.1rem wheat; /* Тени дней недели, чтоб смотрелись красиво */
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.5rem;
+  width: calc(37rem/7);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.1rem 0.1rem wheat;
+  transition: background-color 0.2s; /* Устанавливаю скорость анимации перемещения квадратика с прошедшими и будущими датами */
+}
+
+.today {
+  background-color: #eed202;
+}
+b {
+  font-size: 20px;
+  color:red;
+  text-shadow: 0.1rem 0.1rem #b30000;
+}
+
+.days div:hover:not(.today){
+  background-color: black; /* Устанавливаю толщину квадрата и делаю ровную линию */
+  border: 0.2rem solid gray;
+  cursor: pointer;
+}
